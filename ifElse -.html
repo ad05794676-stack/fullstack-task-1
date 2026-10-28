@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Conditional Statements</title>
+</head>
+<body>
+
+<script>
+    // ==================================================
+    // 1. IF STATEMENT
+    // ==================================================
+    // The if statement executes a block of code when
+    // the specified condition evaluates to true.
+
+    let age = 20;
+
+    if (age >= 18) {
+        console.log("You are eligible to vote.");
+    }
+
+    // If the condition is false, the block is skipped.
+
+
+    // ==================================================
+    // 2. IF-ELSE STATEMENT
+    // ==================================================
+    // The if-else statement executes one block when the
+    // condition is true and another block when it is false.
+
+    let number = 7;
+
+    if (number % 2 === 0) {
+        console.log("Even Number");
+    } else {
+        console.log("Odd Number");
+    }
+
+
+    // ==================================================
+    // 3. ELSE-IF LADDER
+    // ==================================================
+    // An else-if ladder checks multiple conditions in order.
+    // The first matching block executes, and the remaining
+    // conditions are skipped.
+
+    let marks = 85;
+
+    if (marks >= 90) {
+        console.log("Grade A");
+    } else if (marks >= 75) {
+        console.log("Grade B");
+    } else if (marks >= 60) {
+        console.log("Grade C");
+    } else if (marks >= 40) {
+        console.log("Grade D");
+    } else {
+        console.log("Fail");
+    }
+
+
+    // ==================================================
+    // 4. NESTED IF STATEMENT
+    // ==================================================
+    // A nested if statement places one if statement inside
+    // another and checks conditions in multiple levels.
+
+    let userAge = 22;
+    let hasID = true;
+
+    if (userAge >= 18) {
+        if (hasID) {
+            console.log("Entry allowed.");
+        } else {
+            console.log("Please show your ID.");
+        }
+    } else {
+        console.log("Entry not allowed.");
+    }
+
+
+    // ==================================================
+    // 5. SWITCH STATEMENT
+    // ==================================================
+    // The switch statement compares an expression with
+    // multiple case values using strict equality.
+    // The matching case executes until a break or the
+    // end of the switch statement is reached.
+    // The default block executes when no case matches.
+
+    let day = 3;
+
+    switch (day) {
+        case 1:
+            console.log("Monday");
+            break;
+
+        case 2:
+            console.log("Tuesday");
+            break;
+
+        case 3:
+            console.log("Wednesday");
+            break;
+
+        case 4:
+            console.log("Thursday");
+            break;
+
+        case 5:
+            console.log("Friday");
+            break;
+
+        case 6:
+            console.log("Saturday");
+            break;
+
+        case 7:
+            console.log("Sunday");
+            break;
+
+        default:
+            console.log("Invalid day");
+    }
+
+
+    // ==================================================
+    // 6. SWITCH WITH MULTIPLE CASES
+    // ==================================================
+    // Multiple cases can share the same code block.
+    // This is called fall-through between matching labels.
+    // A break prevents execution from continuing into
+    // subsequent case blocks.
+
+    let fruit = "Apple";
+
+    switch (fruit) {
+        case "Apple":
+        case "Mango":
+        case "Banana":
+            console.log("This is a fruit.");
+            break;
+
+        case "Carrot":
+            console.log("This is a vegetable.");
+            break;
+
+        default:
+            console.log("Unknown item.");
+    }
+
+
+    // ==================================================
+    // 7. TERNARY OPERATOR
+    // ==================================================
+    // The ternary operator is a concise alternative to
+    // a simple if-else statement.
+    // Syntax: condition ? valueIfTrue : valueIfFalse.
+
+    let temperature = 30;
+
+    let weather = temperature > 25 ? "Hot" : "Cool";
+
+    console.log(weather);
+
+
+    // ==================================================
+    // 8. TERNARY OPERATOR WITH MULTIPLE CONDITIONS
+    // ==================================================
+    // Nested ternary operators can evaluate multiple
+    // conditions, but too many levels reduce readability.
+
+    let score = 78;
+
+    let grade = score >= 90 ? "A" :
+                score >= 75 ? "B" :
+                score >= 60 ? "C" :
+                score >= 40 ? "D" : "Fail";
+
+    console.log("Grade:", grade);
+
+
+    // ==================================================
+    // 9. TRUTHY AND FALSY CONDITIONS
+    // ==================================================
+    // JavaScript conditions use Boolean coercion.
+    // Falsy values include false, 0, -0, 0n, "",
+    // null, undefined, and NaN.
+    // All other values are truthy, including empty arrays
+    // and empty objects.
+
+    let username = "";
+
+    if (username) {
+        console.log("Username provided.");
+    } else {
+        console.log("Username is empty.");
+    }
+
+
+    // ==================================================
+    // 10. IMPORTANT DIFFERENCES
+    // ==================================================
+    // if:
+    // Executes code when a condition is true.
+    //
+    // if-else:
+    // Selects between two alternative blocks.
+    //
+    // else-if:
+    // Checks multiple conditions in sequence.
+    //
+    // switch:
+    // Selects a case based on strict equality matching.
+    //
+    // Ternary operator:
+    // Produces one of two values based on a condition.
+    //
+    // break:
+    // Exits a switch block.
+    //
+    // default:
+    // Handles unmatched switch cases.
+    //
+    // Use curly braces for conditional blocks to improve
+    // readability and reduce accidental logic errors.
+
+</script>
+
+</body>
+</html>
