@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>JavaScript Events</h2>
+
+    <button id="clickBtn">Click Me</button>
+    <div id="box" style="padding: 20px; background: lightblue; margin: 10px 0">
+      Move your mouse over this box
+    </div>
+
+    <input type="text" id="keyInput" placeholder="Type something" />
+
+    <form id="myForm">
+      <input type="text" id="username" placeholder="Enter username" required />
+      <input type="email" id="email" placeholder="Enter email" required />
+      <button type="submit">Submit</button>
+    </form>
+
+    <script>
+        // Element.addEventListner(event, handling_function)
+
+        var btn = document.querySelector("#clickBtn");
+        var box = document.querySelector("#box");
+        var inputK = document.querySelector("#keyInput");
+        var form = document.querySelector("#myform");
+        var username = document.querySelector("#username");
+        var email = document.querySelector("#email");
+        
+
+
+
+        btn.addEventListener("click",()=>{
+            console.log("Click")
+        })
+
+        box.addEventListener('mouseover',()=>{
+            box.style["background-color"] = "red";
+        })
+
+        box.addEventListener('mouseout',()=>{
+            box.style.backgroundColor = 'lightblue';
+        })
+
+        // mousemove
+        box.addEventListener("mousemove",(event)=>{
+            // console.log(event.clientX, event.clientY);
+            box.innerHTML = `X : ${event.clientX} Y : ${event.clientY}`;
+        })
+
+        // MouseDown and mouseup
+        box.addEventListener('mousedown',()=>{
+            box.style.backgroundColor = 'yellow';
+        })
+
+        // 2 keyword event
+
+        // 2.1 Key word
+        // var inputK = document.querySelector("#keyInput");
+        // inputK.addEventListener("keydown",(event)=>{
+        //     console.log(event.key, event.code);
+        //     if(event.key ==='s'){
+        //         alert("s");
+        //     }
+        // });
+
+        // 2.2 Keyup
+
+        // document.addEventListener("keyup",(event)=>{
+        //     console.log(event.key, event.code);
+        //     if(event.key ==='s'){
+        //         alert("s");
+        //     }
+        // });
+
+        // 3.1 input event
+        username.addEventListener("input",()=>{
+            console.log(username.value);
+            h.innerHTML = `<i> ${usernme.value} </i>`
+        });
+
+        // 3.2 change event
+        email.addEventListener("change", ()=>{
+            console.log(email.value);
+            // h.innerHTML = `<i> ${usernme.value} </i>`
+        });
+
+        // 3.3 Focus and Blur
+        email.addEventListener("focus", () => {
+            email.style.backgroundColor = "red";
+        });
+
+        email.addEventListener("blur", () => {
+            email.style.backgroundColor = "white";
+        });
+
+
+
+        //reset element 
+
+        
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+</head>
+<body>
+    
+</body>
+
+<h1> Welcome</h1>
+
+<!-- <button onclick="showMessage()">Click me</button>  -->
+
+<script>
+    //if-else
+    // if(true){
+    //     console.log("Hello Vichitra Solanki");
+    // }
+    // if(false){
+    //     console.log("Hello Vichitra Solanki");
+    // } else{
+    //     console.log("error");
+    // }
+
+    // var marks = parseInt(prompt('Enter the Marks:- '));
+
+    // if(marks >=80){
+    //     console.log('Grade A');
+    // }else if(marks >=60){
+    //     console.log('Grade B');
+    // }else{
+    //     console.log('Grade C');
+    // }
+    // //switch
+    // var day = 'tues';
+
+    // switch(day){
+    //     case 'mon':
+    //         console.log('Monday');
+    //         break;
+    //     case 'tues':
+    //         console.log('Tuesday');
+    //         break;    
+    // }
+    // //ternary operator
+
+    // var  num = (5=='5')? 6:7;
+    // console.log(num);
+
+
+    // //For Loop
+    // //While Loop
+    // //Do-While Loop
+    // //Nested Loop
+
+    // function showMessage(){
+    //     alert("WElcome to javaScript!");
+    // }
+
+    // console.log("Running JavaScript with Node.js"); 
+
+    // let Name = "surya";
+    // let age = "46"
+    // let marks = "80"
+
+    // console.log(Name)
+    // console.log(age)
+    // console.log(marks)
+
+    // function surya(String){
+    // return 58 ;
+    // }
+
+    // console.log(surya);
+
+    // var funExpression = function(){
+    //     console.log("hellow , we are learning function expression");
+
+    // }
+    // funExpression();
+
+    // var nameedFunctionExp = function nameFun(num){
+    //     return num*num;
+    // }
+
+    // console.log(nameedFunctionExp(10));
+
+
+    // var arrowFun =()=>{
+    //    console.log("we are  working or Arraow function")
+    // }
+
+
+    // arrowFun();
+
+//   const implicitArrowFun = (num) => num / 10;
+
+//    console.log(implicitArrowFun(100)); 
+    
+//    console.log(implicitArrowFun(50));  
+     
+
+// function displayContent(name, age) {
+//     console.log({
+//         Name: name,
+//         Age: age
+//     });
+// }
+
+// displayContent("Surya", 21);
+
+    // function funscope(){
+        // var num = 20;
+        // const num1 = 20;
+        // let num3 = 30;
+        //  console.log("var fun" , num);
+        //  console.log("const fun" , num1);
+    //      console.log("let fun" , num3);
+
+
+    // }
+    // funscope();
+    // console.log("var fun2", num);
+    // console.log("const fun2", num1);
+    // console.log("let fun2" , num3);
+
+
+
+    // // inner function
+    // function outerfun(){
+    //     var a = 10;
+    //     const b = 20;
+    //     const c = 30;
+
+    //     function inner(){
+    //         var inner = 50;
+    //         console.log(a);
+    //         console.log(b);
+    //         console.log(c);
+
+    //     }
+    //     inner();
+    //    // console.log(innerv);
+
+    // }
+    // outerfun();
+    // function oufun(){
+    //     var message = "Hello, Your Name";
+
+    //     function inFun(){
+    //         console.log(message);
+
+    //     }
+    //     return inFun;
+
+
+    // }
+    // var message = ouFun();
+    // message();
+     
+
+
+    // // same preserved varibale
+
+    // function OutCounter();
+    // var count = 0;
+    // function inn(){
+    //     console.log(++count);
+
+    // }
+    // return inn;
+    //Array 
+    var obj = [
+{
+    id : 1,
+    Name : "Akash",
+    age : 20,
+    email:"ad@gmail.com"
+},
+
+{
+    id2 : 2,
+    Name :"vishanu",
+    age : 20 ,
+    email2:"katara@gmail.com"
+
+},
+{
+    id : 3,
+    Name : "Anshul",
+    age : 21,
+    email:"ansh@gmail.com"
+
+}]
+
+// call back 
+
+
+    var arr=[{
+        id:1,
+        name:"John",
+        age:30,
+        email:"abc@gmail.com"},
+        {id:2,
+        name:"Doe",
+        age:25,
+        email:"def@gmail.com"},
+        {id:3,
+        name:"Smith",
+        age:35,
+        email:"qwq@gmail.com"}
+
+        
+    ];
+    arr.forEach((data) => {
+    console.log(data.name);});
+
+    arr.forEach((data,index,arr) => {
+    console.log(data.name + " is at index " + index + " in the array.");
+    console.log('forEach arr:', arr);
+    });
+
+    //
+   
+    var obj2 = arr.map((data) => {
+    return { ...data, age: data.age + 1 };
+    });
+
+    console.log(obj2);
+
+    arr.map((data, index, array) => {
+    console.log('map index:', index);
+    console.log('map array:', array);
+    });
+
+    // filter
+    var age21 = arr.filter((data)=> data.age === 23);
+    console.log(age22);
+
+    // reduce 
+    var totalAge = arr.reduce((sum, data) => sum + data.age, 0);
+
+    console.log(totalAge); 
+
+    // method chinning;
+    var arr1 = [0,9,55,6,2,52,4,,5,6,8,9];
+    conlose.log arr1.filter((data)=> data % 2 === 0).map((num)=> num+5).reduce((sum,num)=> sum +n)
+
+
+    // object key 
+
+
+   // object.keys(obj1_name);
+   
+    var obj1 = {
+    name: "Akash",
+    age: 20,
+    branch: "CSE",
+    course: "Data Science"
+    };
+
+    console.log(Object.keys(obj1));
+
+    //object.value(obj_name);
+    
+    var obj1 = {
+    name: "Akash",
+    age: 20,
+    branch: "CSE",
+    course: "Data Science"
+    };
+
+    console.log(Object.values(obj1));
+
+
+    //delete obje.keyname
+    
+    var obj1 = {
+    name: "Akash",
+    age: 20,
+    branch: "CSE",
+    course: "Data Science"
+    };
+
+// Delete age property
+    delete obj1.age;
+
+    console.log(obj1);
+
+    // syntax error
+    // refrences error 
+    // typererror
+    // range error
+
+
+
+    // DEBUGING
+    // CONSOLE.METHOD
+    // CONSOLE.ERROR
+    //CONSOLE.LOG
+    //CONSOLE.WARM;
+    //CONSOLE.TABLE;
+    //CONSOLE.TRACE;
+
+
+
+
+    // LOGICAL ERROR 
+
+
+    // THORW TRY CATCH FINALLY
+
+
+    try{
+        var a = num;
+        const sum =10;
+    }catch(e){
+        console.error('error', e.message);
+    }finally{
+        console.log("code has been executed");
+
+
+    }
+
+    function ageEligibilty(num){
+        try{
+            if(age<19){
+                throw new error ("Your age is not as per requirement");
+
+            }
+            console.log("your are not Eligilbility to give vote");
+
+        }catch (e){
+            console.error(e.message);
+
+        } finally {
+            console.log('done');
+            
+        }
+    }
+
+
+
+
+
+    </script>
+</body>
+</html>
+
+
+</script>
+</html>`
