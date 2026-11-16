@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="startTimeOut">Start Timerout</button>
+    <button id="EndTimeOut">End Timerout</button>
+</body>
+<script>
+    var timeOut = document.querySelector("#startTimeOut");
+    var endTimeOut = document.querySelector("#EndTimeOut");
+    var id= null;
+
+    // setTimeout(callback_function, delayTime(ms), ags1,arg2,...)
+
+    var fun = (name)=>{
+        console.log("hello", name);
+    };
+    timeOut.addEventListener("click", ()=>{
+        id = setTimeout(fun, 1000, "Vichitra");
+        console.log(id);
+    });
+
+    // timeOut.addEventListener("click", ()=>{
+    //     id = setTimeout((name)=>{
+    //         console.log("hello", name);
+    //     }, 1000, "Vichitra");
+    //     console.log(id);
+    // });
+
+    endTimeOut.addEventListener("click", ()=>{
+        clearTimeout(id);
+    });
+    StartInterval.addEventListener("click", ()=>{
+        id count = 0;
+        intervalId = setInterval(()=>{
+            console.log("Interval Running ", count++);
+        }, 1000);
+        console.log(id);
+    });
+</script>
+</html>

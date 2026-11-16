@@ -1,0 +1,78 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery Example</title>
+
+    <!-- jQuery CDN -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+</head>
+<body>
+
+    <h1>jQuery</h1>
+
+    <p id="para">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+    </p>
+
+    <p class="paras">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+    </p>
+
+    <p class="paras">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+    </p>
+
+    <input type="text">
+
+    <script>
+
+        // Document Ready
+        $(document).ready(() => {
+
+            // Select ID and change text
+            $("#para").text("Hello Akash");
+
+            // Select class and change HTML
+            $(".paras").html("<i>Hello jQuery</i>");
+
+            // Change CSS of class
+            $(".paras").css({
+                color: "red",
+                backgroundColor: "yellow"
+            });
+
+            // Change CSS of multiple elements
+            $("h1, h2").css({
+                color: "blue",
+                backgroundColor: "green"
+            });
+
+            // Click event
+            $("h1").click(() => {
+
+                $("h1").css({
+                    color: "blue",
+                    backgroundColor: "green"
+                });
+
+            });
+
+            // Input value
+            $("input[type='text']").val("hello");
+
+            // Placeholder
+            $("input[type='text']").attr(
+                "placeholder",
+                "Enter your name"
+            );
+
+        });
+
+    </script>
+
+</body>
+</html>

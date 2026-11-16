@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1></h1>
+    <button>Start TimeOut</button>
+    <button>Clear TimeOut</button>
+    <button>Start Interval</button>
+    <button>Clear Interval</button>
+</body>
+<script>
+    var buttons = document.querySelectorAll("button");
+    var timeId;
+    var intervalId;
+
+    buttons[0].addEventListener("click",()=>{
+        timeId = setTimeout(() => {
+            console.log("Set Timeout is running..");
+        },2000);
+        console.log("Set Timeout Id", timeId);
+    });
+
+    buttons[1].addEventListener("click",()=>{
+        clearTimeout(timeId);
+        console.log("Set Timeout is cleared");
+    });
+
+    buttons[2].addEventListener("click", () => {
+        let count = 0;
+        intervalId = setInterval(() =>{
+            if(count === 10){
+                clearInterval(intervalId);
+            }
+            document.querySelector("h1").innerHTML = `${++count}`;
+            // console.log("Count is ", ++count);
+        },1000);
+    });
+
+    buttons[3].addEventListener("click", () => {
+        clearInterval(intervalId);
+        // console.log("Set Interval is cleared");
+    });
+    new promise((resolve, reject) => {
+        var data = 10;
+        resolve(data);
+    })
+    .then((res)=>console.log(res))
+    .catch((err)=>console.log(err));
+
+    var fun = async () => {
+        var data = await res.json();
+        console.log(data);
+
+    }
+    var result;
+    // fetch("https://jsonplaceholder.typicode.com/todos/1")
+    // .then((res) => res.json())
+    // .then((data) => console.log(data))
+    // .catch((err) => console.log(err));
+
+    var fetchApi = async () => {
+        try {
+            var res = await fetch("https://jsonplaceholder.typicode.com/todos/1");
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                name: "Akash",
+                age: 25
+
+            })
+        } catch (error) {
+            var data = await res.json();
+            console.log(data);
+
+    };
+    fetchApi();
+
+</script>
+</html>
