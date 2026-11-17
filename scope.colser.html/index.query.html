@@ -1,78 +1,253 @@
-
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>jQuery Example</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>jQuery - Syntax, Selectors and DOM Manipulation</title>
 
-    <!-- jQuery CDN -->
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-
-</head>
-<body>
-
-    <h1>jQuery</h1>
-
-    <p id="para">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+  </head>
+  <body>
+    <h1>JQUERY</h1>
+    <h2>jQuery</h2>
+    <div id="cont">
+      <p id="Para2" class="Paras"></p>
+      <p id="Para" class="Paras">
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nesciunt, nobis.
+      </p>
+      <p class="Paras">
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptates, est?
+      </p>
+      <p class="Paras">
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Velit, earum?
+      </p>
+    
+    <p id="Para2" class="Paras"></p>
+    <p id="Para" class="Paras">
+      Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nesciunt, nobis.
     </p>
-
-    <p class="paras">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+    <p class="Paras">
+      Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptates, est?
     </p>
-
-    <p class="paras">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+    <p class="Paras">
+      Lorem ipsum dolor sit amet consectetur, adipisicing elit. Velit, earum?
     </p>
+</div>
+    <form>
+      <label for="Name"> Enter Your Name</label>
+      <input type="text" id="Name" name="Name" />
+    </form>
+    <button id="hp">Hide Paragraphs</button>
+    <button id="sp">Show Paragraphs</button>
 
-    <input type="text">
+    <button id="ac">Add Class</button>
+    <button id="rc">Remove Class</button>
+    <button id="tc">Toggle Class</button>
+
+    <hr />
+    <hr />
+    <div style="background-color: aquamarine; width: 400px; height: 100px;">
+        Effect Box
+        
+    </div>
+    <br />
+    <button id="fo">Fade Out</button>
+    <button id="fi">Fade In</button>
+    <button id="ft">Fade Toggle</button>
+    <button id="fto">Fade To</button>
 
     <script>
+      // ==========================================
+      // 1. JQUERY BASIC SYNTAX
+      // ==========================================
 
-        // Document Ready
-        $(document).ready(() => {
+      // jQuery syntax:
+      // $(selector).action();
+      $("h1");
 
-            // Select ID and change text
-            $("#para").text("Hello Akash");
+      // $ is the jQuery function.
+      // selector selects HTML elements.
+      // action performs an operation on selected elements.
 
-            // Select class and change HTML
-            $(".paras").html("<i>Hello jQuery</i>");
+      // Wait until the HTML document is fully loaded.
+      $(document).ready(function () {
+        // ==========================================
+        // 2. JQUERY SELECTORS
+        // ==========================================
 
-            // Change CSS of class
-            $(".paras").css({
-                color: "red",
-                backgroundColor: "yellow"
-            });
+        // ID Selector
+        // Selects an element using its ID.
+        console.log($("#Para2").html("<i>Hello</i>"));
+        console.log($("#Para").text("<i>Hello</i>"));
 
-            // Change CSS of multiple elements
-            $("h1, h2").css({
-                color: "blue",
-                backgroundColor: "green"
-            });
+        // Class Selector
+        // Selects all elements having the specified class.
+        $(".Paras").css({ color: "red", backgroundColor: "black" });
 
-            // Click event
-            $("h1").click(() => {
+        // Element Selector
+        // Selects all paragraph elements.
+        $("p").css({ color: "red", backgroundColor: "black" });
 
-                $("h1").css({
-                    color: "blue",
-                    backgroundColor: "green"
-                });
+        // Universal Selector
+        // Selects all HTML elements.
+        // $("*").css("margin", "5px");
 
-            });
+        // Group Selector
+        // Selects multiple types of elements.
+        $("h1,h2").css({ color: "blue" });
 
-            // Input value
-            $("input[type='text']").val("hello");
+        // Attribute Selector
+        // Selects elements based on attributes.
+        $("input[type='text']").val("Hello");
 
-            // Placeholder
-            $("input[type='text']").attr(
-                "placeholder",
-                "Enter your name"
-            );
+        // ==========================================
+        // 3. CLICK EVENTS WITH JQUERY
+        // ==========================================
 
+        // click() executes when an element is clicked.
+
+        $("#hp").click(()=>{
+            $(".Paras").hide();
         });
 
-    </script>
+        // Hide all paragraphs.
 
-</body>
-</html>
+        // Show all paragraphs.
+
+        $("#sp").click(()=>{
+            $("p").show();
+        });
+
+        // document.querySelector("#sp").addEventListener("click",()=>{
+        //     document.querySelectorAll("p").forEach((ele)=>{
+        //         Element.show=true;
+        //     })
+        // });
+
+        // ==========================================
+        // 4. GET AND SET CONTENT
+        // ==========================================
+
+        // text() gets or sets text content.
+        console.log($("#Para").text());
+        $("#Para").text("Hello........");
+        // html() gets or sets HTML content.
+
+        console.log($("#Para2").html());
+        $("#Para2").html("<i>Hello</i>");
+
+        // ==========================================
+        // 5. ADDING ELEMENTS
+        // ==========================================
+
+        // append() adds content at the end.
+
+        // $("#cont").append("<h3>Article Heading</h3>");
+        $("#cont").prepend("<h3>Article Heading</h3>");
+        
+        // $("cont").appendTo($("h1"));
+
+
+        // ==========================================
+        // 6. REMOVING ELEMENTS
+        // ==========================================
+
+        // empty() removes child elements but keeps the parent.
+        $("#cont").empty();
+        // remove() removes the selected element itself.
+
+        // ==========================================
+        // 7. CSS MANIPULATION
+        // ==========================================
+
+        // css() gets or sets CSS properties.
+
+        // addClass() adds a CSS class.
+        // removeClass() removes a CSS class.
+        // toggleClass() adds or removes a class.
+        $("#ac").click(()=>{
+            $("#cont").addClass("Temp");
+        });
+        $("#rc").click(()=>{
+            $("#cont").removeClass("Temp");
+        });
+        $("#tc").click(()=>{
+            $("#cont").toggleClass("Temp");
+        });
+
+        // ==========================================
+        // 8. GETTING AND SETTING INPUT VALUES
+        // ==========================================
+
+        // val() gets or sets input values.
+
+        // =====================================
+        // 5. TOGGLE
+        // =====================================
+
+        // toggle() switches between hide and show.
+        
+
+        // =====================================
+        // 6. FADE EFFECTS
+        // =====================================
+
+        // fadeOut() gradually hides an element.
+        $("#fo").click(()=>{
+            $("eb").fadeOut(1000);
+        })
+        
+        // fadeIn() gradually displays an element.
+        $("#fi").click(()=>{
+            $("eb").fadeIn(1000);
+        });
+
+        // fadeToggle() switches between fadeIn and fadeOut.
+        $("#ft").click(()=>{
+            $("eb").fadeToggle(1000);
+        });
+
+        // fadeTo() changes the opacity of an element.
+        // First argument: duration.
+        // Second argument: opacity (0 to 1).
+        $("#fto").click(()=>{
+            $("eb").fadeTo(1000, 0.5);
+        });
+
+        // =====================================
+        // 7. SLIDE EFFECTS
+        // =====================================
+
+        // slideUp() hides an element with an upward motion.
+        $("#su").click(()=>{
+            $("eb").slideUp(1000);
+        });
+        
+
+        // slideDown() displays an element with a downward motion.
+        $("#sd").click(()=>{
+            $("eb").slideDown(1000);
+        });
+
+        // slideToggle() switches between slideUp and slideDown.
+       $("#st").click(()=>{
+            $("eb").slideToggle(1000);
+        });
+
+        // ==========================================
+        // 9. DOM TRAVERSING
+        // ==========================================
+
+        // parent() selects the direct parent.
+        $("#Para").parent().css("border", "2px solid red");
+        
+
+        // children() selects direct child elements.
+
+        // first() selects the first matched element.
+
+        // last() selects the last matched element.
+      });
+    </script>
+  </body>
+</html>]
